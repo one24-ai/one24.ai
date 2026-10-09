@@ -1,0 +1,39 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE } from "../site";
+---
+
+<Base title="About" description="About Zach Koncir and where the name one24 comes from.">
+	<div class="wrap">
+		<h1>About</h1>
+		<!-- DRAFT: placeholders in [brackets] for Zach to fill in. -->
+		<div class="prose">
+			<p>
+				I’m {SITE.name}, a principal engineer with more than 15 years in infrastructure. I came up through
+				network operations and DevOps, led an AWS consulting practice, and now work on a platform that runs some of
+				the world’s most-played online games. Lately my work centres on one question: how do engineers stay in
+				charge as AI agents take on more of the work?
+			</p>
+
+			<h2>Why one24</h2>
+			<p>
+				For most of my life I raced motocross, and 124 was the number on my plate. Years later the number
+				came back: my first daughter was born on December 4, 12/4. So one24 is two things I care about, neither
+				of which has anything to do with software, which is sort of the point.
+			</p>
+
+			<h2>Get in touch</h2>
+			<p>
+				The best way to reach me is email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. My code is on
+				<a href={SITE.github}>GitHub</a>.
+			</p>
+		</div>
+	</div>
+</Base>
+
+<style>
+	h1 {
+		font-size: var(--step-4);
+		margin: clamp(2rem, 6vw, 4rem) 0 2rem;
+	}
+</style>

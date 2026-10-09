@@ -1,0 +1,65 @@
+---
+import Base from "../layouts/Base.astro";
+import ProjectList from "../components/ProjectList.astro";
+import { SITE } from "../site";
+---
+
+<Base title="Work" description="Open source tools for engineer-driven AI, and consulting on AI in platform engineering.">
+	<div class="wrap">
+		<h1>Work</h1>
+
+		<section aria-labelledby="oss">
+			<h2 id="oss">Open source</h2>
+			<p class="lede">
+				Open source and published under <a href={SITE.github}>github.com/one24-ai</a> as each project is ready.
+			</p>
+			<h3>pi packages</h3>
+			<p class="lede">Extensions for <a href="https://pi.dev">pi</a>, the terminal coding agent I work in every day.</p>
+			<ProjectList kind="pi-package" />
+			<h3>Other projects</h3>
+			<ProjectList kind="project" />
+		</section>
+
+		<section aria-labelledby="consulting" class="consulting">
+			<h2 id="consulting">Consulting</h2>
+			<!-- DRAFT: Zach to confirm the offers and wording. -->
+			<div class="prose">
+				<p>
+					I help engineering teams adopt AI in a way their engineers trust: agents that work inside your
+					platform’s rules, with the engineer reviewing and steering, not rubber-stamping.
+				</p>
+				<ul>
+					<li>Rolling out coding agents across a team, with guardrails and a workflow people keep using.</li>
+					<li>Building internal tools and extensions so agents can reach your platform safely.</li>
+					<li>Rethinking platform engineering for a world where agents are users of your platform too.</li>
+				</ul>
+				<p>
+					If that sounds like your team, <a href={`mailto:${SITE.email}?subject=Consulting`}>email me</a> with a
+					few lines about where you are today.
+				</p>
+			</div>
+		</section>
+	</div>
+</Base>
+
+<style>
+	h1 {
+		font-size: var(--step-4);
+		margin-top: clamp(2rem, 6vw, 4rem);
+	}
+	h2 {
+		font-size: var(--step-3);
+		margin: 3rem 0 0.75rem;
+	}
+	.lede {
+		color: var(--muted);
+		margin: 0 0 1.5rem;
+	}
+	h3 {
+		font-size: var(--step-1);
+		margin: 2rem 0 0.75rem;
+	}
+	.consulting {
+		margin-top: 2rem;
+	}
+</style>

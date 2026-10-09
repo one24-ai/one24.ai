@@ -1,0 +1,89 @@
+---
+import { getPosts, formatDate } from "../posts";
+
+interface Props {
+	limit?: number;
+}
+const { limit } = Astro.props;
+const posts = (await getPosts()).slice(0, limit);
+---
+
+{
+	posts.length === 0 ? (
+		<p class="empty">
+			The first post is on its way. Follow along with the <a href="/rss.xml">RSS feed</a>.
+		</p>
+	) : (
+		<ol class="posts">
+			{posts.map((post) => (
+				<li>
+					<time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+					<div>
+						<h3>
+							<a href={`/writing/${post.id}/`}>{post.data.title}</a>
+							{post.data.draft && <span class="draft">Draft</span>}
+						</h3>
+						<p>{post.data.description}</p>
+					</div>
+				</li>
+			))}
+		</ol>
+	)
+}
+
+<style>
+	.posts {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		display: grid;
+		grid-template-columns: 11rem 1fr;
+		column-gap: 2rem;
+		padding-block: 1.25rem;
+	}
+	li + li {
+		border-top: 1px solid var(--rule);
+	}
+	time {
+		color: var(--muted);
+		font-size: 0.9375rem;
+		padding-top: 0.2rem;
+	}
+	h3 {
+		font-size: var(--step-2);
+	}
+	h3 a {
+		color: var(--ink);
+		text-decoration: none;
+	}
+	h3 a:hover {
+		color: var(--accent);
+		text-decoration: underline;
+	}
+	p {
+		margin: 0.4rem 0 0;
+		color: var(--muted);
+		max-width: 36rem;
+	}
+	.draft {
+		margin-left: 0.6rem;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		color: var(--plate-text);
+		background: var(--plate);
+		padding: 0.1rem 0.45rem;
+		border-radius: 3px;
+		vertical-align: middle;
+	}
+	.empty {
+		color: var(--muted);
+		margin: 0;
+	}
+	@media (max-width: 40rem) {
+		li {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

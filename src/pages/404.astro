@@ -1,0 +1,17 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Page not found">
+	<div class="wrap">
+		<h1>This page doesn’t exist.</h1>
+		<p>It may have moved. Try the <a href="/writing/">writing</a> or the <a href="/work/">work</a> page.</p>
+	</div>
+</Base>
+
+<style>
+	h1 {
+		font-size: var(--step-4);
+		margin-top: clamp(2rem, 6vw, 4rem);
+	}
+</style>

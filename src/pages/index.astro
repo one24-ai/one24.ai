@@ -1,0 +1,94 @@
+---
+import Base from "../layouts/Base.astro";
+import ProjectList from "../components/ProjectList.astro";
+import PostList from "../components/PostList.astro";
+import { SITE } from "../site";
+---
+
+<Base>
+	<section class="wrap hero">
+		<!-- DRAFT headline and intro: Zach to rewrite in his own voice. -->
+		<h1>AI isn’t magic. It’s a supercharger for engineers who learn to drive it.</h1>
+		<p class="intro">
+			I’m {SITE.name}. I build open source tools that keep engineers at the centre of AI, and I help
+			people and teams get past the hard part: learning to use it well.
+		</p>
+		<p class="actions">
+			<a class="button" href={`mailto:${SITE.email}?subject=Consulting`}>Talk about consulting</a>
+			<a href="/work/">See the open source work</a>
+		</p>
+	</section>
+
+	<section class="wrap block" aria-labelledby="oss">
+		<h2 id="oss">Open source</h2>
+		<h3>pi packages</h3>
+		<p class="lede">Extensions for <a href="https://pi.dev">pi</a>, the terminal coding agent I work in every day.</p>
+		<ProjectList kind="pi-package" />
+		<h3>Other projects</h3>
+		<ProjectList kind="project" />
+	</section>
+
+	<section class="wrap block" aria-labelledby="writing">
+		<h2 id="writing">Writing</h2>
+		<PostList limit={3} />
+	</section>
+</Base>
+
+<style>
+	.hero {
+		padding-block: clamp(3rem, 10vw, 7rem) clamp(2rem, 6vw, 4rem);
+	}
+	h1 {
+		font-size: var(--step-5);
+		font-weight: 700;
+		line-height: 1.02;
+		letter-spacing: -0.035em;
+		max-width: 21ch;
+	}
+	.intro {
+		font-size: var(--step-2);
+		line-height: 1.45;
+		color: var(--muted);
+		max-width: 34rem;
+		margin: 2rem 0 0;
+	}
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1rem 1.75rem;
+		margin: 2.5rem 0 0;
+	}
+	.button {
+		display: inline-block;
+		background: var(--ink);
+		color: #fff;
+		text-decoration: none;
+		font-weight: 600;
+		line-height: 1.2;
+		padding: 0.85rem 1.4rem;
+		border-radius: 999px;
+		transition: background-color 120ms ease;
+	}
+	.button:hover {
+		background: var(--accent);
+	}
+	.block {
+		margin-top: clamp(3.5rem, 8vw, 6rem);
+	}
+	h2 {
+		font-size: var(--step-3);
+		margin-bottom: 1.25rem;
+	}
+	h3 {
+		font-size: var(--step-1);
+		margin: 2rem 0 0.75rem;
+	}
+	h2 + h3 {
+		margin-top: 0;
+	}
+	.lede {
+		color: var(--muted);
+		margin: -0.25rem 0 1.25rem;
+	}
+</style>

@@ -1,0 +1,38 @@
+---
+// The one24 wordmark: "one" followed by 24 on a race-red number plate.
+interface Props {
+	size?: "sm" | "lg";
+}
+const { size = "sm" } = Astro.props;
+---
+
+<span class:list={["wordmark", size]} aria-label="one24"
+	><span aria-hidden="true">one<span class="plate">24</span></span></span
+>
+
+<style>
+	.wordmark {
+		font-family: var(--sans);
+		font-weight: 750;
+		letter-spacing: -0.035em;
+		color: var(--ink);
+		line-height: 1;
+		white-space: nowrap;
+	}
+	.sm {
+		font-size: 1.375rem;
+	}
+	.lg {
+		font-size: 3rem;
+	}
+	.plate {
+		display: inline-block;
+		margin-left: 0.2em;
+		padding: 0.12em 0.3em 0.14em;
+		background: var(--plate);
+		color: var(--plate-text);
+		border-radius: 0.32em 0.32em 0.5em 0.5em;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+	}
+</style>

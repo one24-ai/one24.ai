@@ -1,0 +1,24 @@
+---
+import Base from "../../layouts/Base.astro";
+import PostList from "../../components/PostList.astro";
+---
+
+<Base title="Writing" description="Posts and updates on engineer-driven AI and platform engineering.">
+	<div class="wrap">
+		<h1>Writing</h1>
+		<p class="lede">Posts on engineer-driven AI, platform engineering, and updates on the open source work.</p>
+		<PostList />
+	</div>
+</Base>
+
+<style>
+	h1 {
+		font-size: var(--step-4);
+		margin-top: clamp(2rem, 6vw, 4rem);
+	}
+	.lede {
+		color: var(--muted);
+		margin: 0.75rem 0 2.5rem;
+		max-width: 36rem;
+	}
+</style>

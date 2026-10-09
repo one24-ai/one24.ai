@@ -1,0 +1,220 @@
+---
+import Base from "../layouts/Base.astro";
+import { CV } from "../cv";
+import { SITE } from "../site";
+
+const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
+---
+
+<Base title="CV" description={`${SITE.name}: experience, skills and education.`}>
+	<div class="wrap cv">
+		<header class="cv-head">
+			<h1>{SITE.name}</h1>
+			<p class="headline">{CV.headline}</p>
+			<p class="contact">
+				{CV.location}
+				<span class="sep" aria-hidden="true">/</span>
+				<a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+				<span class="sep" aria-hidden="true">/</span>
+				<a href={SITE.linkedin}>LinkedIn</a>
+				<span class="sep" aria-hidden="true">/</span>
+				<a href={SITE.github}>GitHub</a>
+			</p>
+			<p class="summary">{CV.summary}</p>
+			<p class="print-hint"><button type="button" onclick="window.print()">Print or save as PDF</button></p>
+		</header>
+
+		<section aria-labelledby="exp">
+			<h2 id="exp">Experience</h2>
+			<ol class="entries">
+				{
+					CV.employers.map((e) => (
+						<li>
+							<div class="org">
+								<h3>{e.org}</h3>
+								<p class="where">{e.location}</p>
+							</div>
+							<div>
+								{e.roles.map((r) => (
+									<div class="role">
+										<h4>{r.title}</h4>
+										<p class="when">{span(r.start, r.end)}</p>
+										{r.summary && <p>{r.summary}</p>}
+										{r.highlights && (
+											<ul>
+												{r.highlights.map((h) => (
+													<li>{h}</li>
+												))}
+											</ul>
+										)}
+									</div>
+								))}
+							</div>
+						</li>
+					))
+				}
+			</ol>
+		</section>
+
+		<section aria-labelledby="skills">
+			<h2 id="skills">Skills</h2>
+			<ul class="skills">{CV.skills.map((s) => <li>{s}</li>)}</ul>
+		</section>
+
+		<section aria-labelledby="edu">
+			<h2 id="edu">Education</h2>
+			<ol class="entries">
+				{
+					CV.education.map((e) => (
+						<li>
+							<p class="when">{e.years}</p>
+							<div>
+								<h3>{e.school}</h3>
+								<p>{e.credential}</p>
+							</div>
+						</li>
+					))
+				}
+			</ol>
+		</section>
+	</div>
+</Base>
+
+<style>
+	.cv-head {
+		margin: clamp(2rem, 6vw, 4rem) 0 1rem;
+		max-width: 46rem;
+	}
+	h1 {
+		font-size: var(--step-4);
+	}
+	.headline {
+		font-size: var(--step-2);
+		margin: 0.5rem 0 0;
+	}
+	.contact {
+		color: var(--muted);
+		margin: 0.75rem 0 0;
+	}
+	.sep {
+		margin-inline: 0.5rem;
+		color: var(--rule);
+	}
+	.summary {
+		margin: 1.5rem 0 0;
+		max-width: 38rem;
+	}
+	.print-hint button {
+		font: inherit;
+		font-weight: 600;
+		color: var(--accent);
+		background: none;
+		border: 1px solid var(--rule);
+		border-radius: 999px;
+		padding: 0.4rem 0.9rem;
+		cursor: pointer;
+	}
+	.print-hint button:hover {
+		border-color: var(--accent);
+	}
+	h2 {
+		font-size: var(--step-3);
+		margin: 3rem 0 0.5rem;
+	}
+	.entries {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border-top: 1px solid var(--rule);
+	}
+	.entries > li {
+		display: grid;
+		grid-template-columns: 11rem 1fr;
+		column-gap: 2rem;
+		padding-block: 1.25rem;
+		border-bottom: 1px solid var(--rule);
+	}
+	.when {
+		color: var(--muted);
+		margin: 0.15rem 0 0;
+		font-variant-numeric: tabular-nums;
+	}
+	h3 {
+		font-size: var(--step-1);
+	}
+	.where {
+		color: var(--muted);
+		margin: 0.2rem 0 0;
+	}
+	.role + .role {
+		margin-top: 1.5rem;
+	}
+	h4 {
+		font-size: var(--step-1);
+		font-weight: 600;
+		margin: 0;
+	}
+	.role .when {
+		margin: 0.15rem 0 0;
+		font-size: 0.9375rem;
+	}
+	.role ul {
+		padding-left: 1.1rem;
+	}
+	.role li + li {
+		margin-top: 0.3rem;
+	}
+	.entries p,
+	.entries ul {
+		margin: 0.5rem 0 0;
+		max-width: 38rem;
+	}
+	.skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		list-style: none;
+		padding: 0;
+		margin: 1rem 0 0;
+	}
+	.skills li {
+		border: 1px solid var(--rule);
+		border-radius: 999px;
+		padding: 0.2rem 0.75rem;
+		background: var(--surface);
+	}
+	@media (max-width: 40rem) {
+		.entries > li {
+			grid-template-columns: 1fr;
+		}
+	}
+	@media print {
+		.print-hint {
+			display: none;
+		}
+		h2 {
+			margin-top: 1.5rem;
+		}
+		.entries > li {
+			break-inside: avoid;
+		}
+	}
+</style>
+
+<style is:global>
+	@media print {
+		html {
+			background: #fff;
+			font-size: 85%;
+		}
+		.site-header nav,
+		.site-footer,
+		.skip-link {
+			display: none !important;
+		}
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+</style>
