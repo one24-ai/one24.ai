@@ -2,6 +2,7 @@
   "name": "one24.ai",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@12.5.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
