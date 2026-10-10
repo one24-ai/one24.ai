@@ -20,6 +20,7 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 				</ul>
 			</div>
 			<p class="summary">{CV.summary}</p>
+			<p class="worked-with"><span class="ww-label">Worked with</span> {CV.workedWith.join(" · ")}</p>
 			<p class="print-hint"><button type="button" onclick="window.print()">Print or save as PDF</button></p>
 		</header>
 
@@ -119,6 +120,16 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 	.summary {
 		margin: 1.5rem 0 0;
 		max-width: 38rem;
+	}
+	.worked-with {
+		margin: 1rem 0 0;
+		max-width: 38rem;
+		font-weight: 500;
+	}
+	.ww-label {
+		color: var(--muted);
+		font-weight: 400;
+		margin-right: 0.35rem;
 	}
 	.print-hint button {
 		font: inherit;
