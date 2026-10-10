@@ -93,6 +93,9 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 		margin: 0.5rem 0 0;
 	}
 	.contact {
+		display: flex;
+		flex-wrap: wrap; /* let the contact line wrap on small phones */
+		align-items: baseline;
 		color: var(--muted);
 		margin: 0.75rem 0 0;
 	}
