@@ -88,7 +88,7 @@ export const CV = {
 					end: "Sep 2019",
 					summary:
 						"Led the AWS practice for North America, running on-site delivery teams of consultants and client staff through cloud and DevOps transformations at top-tier Canadian financial institutions. Drove strategic partner work with AWS, including rolling out the Well-Architected Partner Program across North America and training AWS consultants. Supported new business through pre-sales, requirements gathering and solution design, and audited client environments for improvements. Helped build the recruiting and interview process for the Canadian office.",
-					highlights: ["Ignite talk at DevOpsDays Toronto (2019): “Freedom Within Boundaries”"],
+					highlights: ["Ignite talk at DevOpsDays Toronto (2019): “Preventative and Detective Control for Security Conscious Organizations”"],
 				},
 				{
 					title: "Consultant",
