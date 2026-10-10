@@ -18,6 +18,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{/* PR previews (preview.one24.ai) set PUBLIC_PREVIEW so search engines skip them. */}
+		{import.meta.env.PUBLIC_PREVIEW === "true" && <meta name="robots" content="noindex, nofollow" />}
 		<title>{fullTitle}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonical} />
