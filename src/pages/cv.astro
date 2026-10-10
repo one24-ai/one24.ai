@@ -195,8 +195,18 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 		h2 {
 			margin-top: 1.5rem;
 		}
-		.entries > li {
+		/* Let long employers and roles flow across pages instead of leaving blank gaps.
+		   Keep headings with what follows, and don't split a paragraph or bullet. */
+		.org,
+		.role h4,
+		.role .when {
+			break-after: avoid;
+		}
+		.role p,
+		.role li {
 			break-inside: avoid;
+			orphans: 3;
+			widows: 3;
 		}
 	}
 </style>
