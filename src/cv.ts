@@ -17,7 +17,7 @@ export const CV = {
 	headline: "Principal engineer, infrastructure platforms. Platform engineering, AWS and AI.",
 	location: "Waterloo, Ontario, Canada",
 	summary:
-		"I came up through network operations and DevOps, led an AWS consulting practice, and am now a principal engineer on Riot Games’ infrastructure platform, the foundation League of Legends and VALORANT run on. I care about the unglamorous parts: clear interfaces, safe defaults, and making the right thing the easy thing for the engineers who build on what I make.",
+		"I came up through network operations and DevOps, led an AWS consulting practice, and now help set the technical direction for a game-scale infrastructure platform. I lead through influence and relationships, not authority: earning trust, building alignment across teams, and helping the engineers around me do their best work. And I care about the unglamorous parts: clear interfaces, safe defaults, and making the right thing the easy thing for the engineers who build on what I make.",
 	employers: [
 		{
 			org: "one24",
@@ -53,7 +53,6 @@ export const CV = {
 						"Help lead a multi-year infrastructure efficiency strategy, with savings in data streaming and game server scheduling",
 						"Help build a self-service platform for deploying internal apps",
 						"Mentor engineers and help shape how senior technical leaders work together across the org",
-						"Keynote at Games on AWS Korea (2023) on how Riot and AWS build low-latency infrastructure for players",
 					],
 				},
 				{
