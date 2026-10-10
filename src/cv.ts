@@ -31,7 +31,7 @@ export const CV = {
 						"pi-halo: a workbench for pi, with Build and Plan modes, a git diff view, and commands that draft commit messages and pull requests",
 						"pi-domain: persistent memory, so an agent carries decisions, preferences and lessons between sessions",
 						"pi-containment: a guard layer that decides which actions an agent can take on its own, which need approval, and which are never allowed",
-						"Kiln (in design): a standalone, agent-driven CI/CD system built on pi-durable, where deterministic pipelines decide pass or fail and agents triage failures, propose fixes and watch rollouts",
+						"Kiln (in design): a standalone, agent-driven CI/CD system where deterministic pipelines decide pass or fail and agents triage failures, propose fixes and watch rollouts",
 					],
 				},
 			],
@@ -88,6 +88,7 @@ export const CV = {
 					end: "Sep 2019",
 					summary:
 						"Led the AWS practice for North America, running on-site delivery teams of consultants and client staff through cloud and DevOps transformations at top-tier Canadian financial institutions. Drove strategic partner work with AWS, including rolling out the Well-Architected Partner Program across North America and training AWS consultants. Supported new business through pre-sales, requirements gathering and solution design, and audited client environments for improvements. Helped build the recruiting and interview process for the Canadian office.",
+					highlights: ["Ignite talk at DevOpsDays Toronto (2019): “Freedom Within Boundaries”"],
 				},
 				{
 					title: "Consultant",
@@ -161,7 +162,11 @@ export const CV = {
 	skills: [
 		"Platform engineering",
 		"AWS",
+		"Azure",
 		"Amazon EKS and Kubernetes",
+		"Terraform",
+		"CI/CD",
+		"Python",
 		"AI tooling and coding agents",
 		"Model serving",
 		"TypeScript",
