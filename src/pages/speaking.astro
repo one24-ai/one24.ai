@@ -1,0 +1,169 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE } from "../site";
+
+interface Appearance {
+	year?: string;
+	title?: string; // omit to use the event name as the heading
+	event: string;
+	format: string;
+	summary?: string;
+	link?: string;
+}
+
+// Newest first. Add recordings or slides as `link` when they turn up.
+const talks: Appearance[] = [
+	{
+		year: "2023",
+		event: "Games on AWS Korea",
+		format: "Keynote and hour-long session",
+		summary:
+			"How Riot Games and AWS build the low-latency infrastructure behind League of Legends and VALORANT, with a keynote and a deeper session track.",
+	},
+	{
+		year: "2019",
+		title: "Preventative and Detective Control for Security Conscious Organizations",
+		event: "DevOpsDays Toronto",
+		format: "Ignite talk",
+		summary:
+			"Freedom within boundaries: a pipeline-driven framework of preventative and detective controls that lets developers move fast while the organization stays secure.",
+		link: "https://devopsdays.org/events/2019-toronto/program/zach-koncir/",
+	},
+	{
+		year: "2017",
+		title: "Azure App Service Environment for Highly Compliant Scenarios",
+		event: "Toronto Azure Group",
+		format: "Meetup talk",
+	},
+	{
+		year: "2017",
+		title: "Jenkins Pipelines",
+		event: "Puppet User Group and Pivotal Meetup",
+		format: "Meetup talks",
+	},
+	{
+		year: "2016",
+		title: "AWS Fundamentals",
+		event: "Pivotal Spring Conference",
+		format: "Conference talk",
+	},
+];
+
+const podcasts: Appearance[] = [
+	{
+		year: "2023",
+		title: "Building New Player Experiences at Riot Games",
+		event: "The AWS Developers Podcast, episode 101",
+		format: "Guest, with Ashwin Raghuraman (AWS)",
+		summary:
+			"How Riot uses the cloud to cut player ping through Riot Direct, the move to Kubernetes, and the tech behind fighting toxic voice chat.",
+		link: "https://podcasts.apple.com/ca/podcast/episode-101-building-new-player-experiences-at-riot/id1574162669?i=1000636441064",
+	},
+];
+---
+
+<Base title="Speaking" description="Talks and podcast appearances by Zach Koncir, and how to book him to speak.">
+	<div class="wrap">
+		<h1>Speaking</h1>
+		<p class="lede">
+			Talks and podcasts on infrastructure, platform engineering and AI. I’m always looking for new speaking
+			engagements: conferences, meetups, podcasts and internal team sessions.{" "}
+			<a href={`mailto:${SITE.email}?subject=Speaking`}>Email me</a> with the event, audience and timing.
+		</p>
+
+		<section aria-labelledby="talks">
+			<h2 id="talks">Talks</h2>
+			<ol class="entries">
+				{
+					talks.map((t) => (
+						<li>
+							<p class="when">{t.year}</p>
+							<div>
+								<h3>{t.link ? <a href={t.link}>{t.title ?? t.event}</a> : (t.title ?? t.event)}</h3>
+								<p class="meta">{t.title ? `${t.event} · ${t.format}` : t.format}</p>
+								{t.summary && <p class="summary">{t.summary}</p>}
+							</div>
+						</li>
+					))
+				}
+			</ol>
+		</section>
+
+		<section aria-labelledby="podcasts">
+			<h2 id="podcasts">Podcasts</h2>
+			<ol class="entries">
+				{
+					podcasts.map((p) => (
+						<li>
+							<p class="when">{p.year}</p>
+							<div>
+								<h3>{p.link ? <a href={p.link}>{p.title ?? p.event}</a> : (p.title ?? p.event)}</h3>
+								<p class="meta">{p.title ? `${p.event} · ${p.format}` : p.format}</p>
+								{p.summary && <p class="summary">{p.summary}</p>}
+							</div>
+						</li>
+					))
+				}
+			</ol>
+		</section>
+	</div>
+</Base>
+
+<style>
+	h1 {
+		font-size: var(--step-4);
+		margin-top: clamp(2rem, 6vw, 4rem);
+	}
+	.lede {
+		color: var(--muted);
+		margin: 0.75rem 0 0;
+		max-width: 38rem;
+	}
+	h2 {
+		font-size: var(--step-3);
+		margin: 3rem 0 0.75rem;
+	}
+	.entries {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border-top: 1px solid var(--rule);
+	}
+	.entries > li {
+		display: grid;
+		grid-template-columns: 11rem 1fr;
+		column-gap: 2rem;
+		padding-block: 1.25rem;
+		border-bottom: 1px solid var(--rule);
+	}
+	.when {
+		color: var(--muted);
+		margin: 0.15rem 0 0;
+		font-variant-numeric: tabular-nums;
+	}
+	h3 {
+		font-size: var(--step-1);
+	}
+	h3 a {
+		color: var(--ink);
+		text-decoration: none;
+	}
+	h3 a:hover {
+		color: var(--accent);
+		text-decoration: underline;
+	}
+	.meta {
+		color: var(--muted);
+		margin: 0.2rem 0 0;
+		font-size: 0.9375rem;
+	}
+	.summary {
+		margin: 0.5rem 0 0;
+		max-width: 38rem;
+	}
+	@media (max-width: 40rem) {
+		.entries > li {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
