@@ -104,8 +104,10 @@ const path = Astro.url.pathname;
 			border: 0;
 			cursor: pointer;
 		}
-		.site-header[data-js] .menu-toggle:hover {
-			color: var(--accent);
+		@media (hover: hover) {
+			.site-header[data-js] .menu-toggle:hover {
+				color: var(--accent);
+			}
 		}
 		.label {
 			position: absolute;
