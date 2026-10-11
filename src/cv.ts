@@ -17,7 +17,7 @@ export const CV = {
 	headline: "Principal engineer, infrastructure platforms. Platform engineering, AWS and AI.",
 	location: "Waterloo, Ontario, Canada",
 	summary:
-		"I came up through network operations and DevOps, led an AWS consulting practice, and for the last seven years have helped Riot Games move a global games platform from bare metal to the cloud, along with the cloud-native way of building and running games that comes with it. At that scale and complexity, it’s multi-year work that’s still unfolding. Along the way I’ve helped deliver nine figures in infrastructure savings over the last four years. I lead through influence and relationships, not authority: earning trust, building alignment across teams, and helping the engineers around me do their best work.",
+		"I came up through network operations and DevOps, led an AWS consulting practice, and for the last seven years have helped Riot Games move a global games platform from bare metal to the cloud, along with the cloud-native way of building and running games that comes with it. Over the last four years, I’ve also helped lead efficiency work that delivered nine figures in recurring infrastructure savings. I lead through influence and relationships, not authority: earning trust, building alignment across teams, and helping the engineers around me do their best work.",
 	// Names shown under the intro, in this order.
 	workedWith: ["Riot Games", "AWS", "Deloitte", "Scotiabank", "TD Bank", "RBC", "Mastercard", "Government of Canada"],
 	employers: [
@@ -35,7 +35,7 @@ export const CV = {
 						"Lead the design and operation of a global, game-scale platform on Amazon EKS",
 						"Help shape how Riot brings AI to players, including the architecture for serving models in production",
 						"Build AI tooling that makes everyday engineering faster and safer",
-						"Help lead a multi-year infrastructure efficiency strategy that has saved nine figures over four years, including data streaming and game server scheduling",
+						"Help lead a multi-year infrastructure efficiency strategy that has delivered nine figures in recurring savings, including data streaming and game server scheduling",
 						"Help build a self-service platform for deploying internal apps",
 						"Mentor engineers and help shape how senior technical leaders work together across the org",
 					],
