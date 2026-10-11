@@ -93,7 +93,14 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 
 		<section aria-labelledby="skills">
 			<h2 id="skills">Skills</h2>
-			<ul class="skills">{CV.skills.map((s) => <li>{s}</li>)}</ul>
+			{
+				CV.skills.map((g) => (
+					<div class="skill-group">
+						<p class="group-label">{g.label}</p>
+						<ul class="skills">{g.items.map((s) => <li>{s}</li>)}</ul>
+					</div>
+				))
+			}
 		</section>
 
 		<section aria-labelledby="edu">
@@ -267,6 +274,20 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 	}
 	.talks .when {
 		margin: 0;
+	}
+	.skill-group + .skill-group {
+		margin-top: 1rem;
+	}
+	.skill-group .group-label {
+		margin: 1rem 0 0;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+	.skill-group .skills {
+		margin-top: 0.5rem;
 	}
 	.skills {
 		display: flex;
