@@ -29,7 +29,7 @@ export const CV = {
 					title: "Principal engineer, infrastructure",
 					start: "Oct 2020",
 					summary:
-						"Technical leader for the infrastructure platform behind League of Legends, VALORANT and the rest of Riot’s games, from cloud foundations and container orchestration to deployment tooling and AI-assisted operations.",
+						"Technical leader for the infrastructure platform behind games played by millions every day, including League of Legends and VALORANT, from cloud foundations and container orchestration to deployment tooling, cost efficiency, and AI for both players and engineers.",
 					highlights: [
 						"Set the technical direction for modernizing the core deployment and orchestration layers",
 						"Lead the design and operation of a global, game-scale platform on Amazon EKS",
