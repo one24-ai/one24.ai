@@ -11,16 +11,16 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 		<header class="cv-head">
 			<h1>{SITE.name}</h1>
 			<p class="headline">{CV.headline}</p>
-			<p class="contact">
-				{CV.location}
-				<span class="sep" aria-hidden="true">/</span>
-				<a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-				<span class="sep" aria-hidden="true">/</span>
-				<a href={SITE.linkedin}>LinkedIn</a>
-				<span class="sep" aria-hidden="true">/</span>
-				<a href={SITE.github}>GitHub</a>
-			</p>
+			<div class="contact">
+				<ul>
+					<li>{CV.location}</li>
+					<li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+					<li><a href={SITE.linkedin}>LinkedIn</a></li>
+					<li><a href={SITE.github}>GitHub</a></li>
+				</ul>
+			</div>
 			<p class="summary">{CV.summary}</p>
+			<p class="worked-with"><span class="ww-label">Worked with</span> {CV.workedWith.join(" · ")}</p>
 			<p class="print-hint"><button type="button" onclick="window.print()">Print or save as PDF</button></p>
 		</header>
 
@@ -92,20 +92,44 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 		font-size: var(--step-2);
 		margin: 0.5rem 0 0;
 	}
+	/* Contact line: items wrap on small screens, and the "/" separator that would
+	   start a new line is clipped off, so a line never begins with a slash. */
 	.contact {
-		display: flex;
-		flex-wrap: wrap; /* let the contact line wrap on small phones */
-		align-items: baseline;
+		overflow: hidden;
 		color: var(--muted);
 		margin: 0.75rem 0 0;
 	}
-	.sep {
-		margin-inline: 0.5rem;
+	.contact ul {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		padding: 0;
+		margin: 0 0 0 -1.25rem;
+	}
+	.contact li {
+		position: relative;
+		margin-left: 1.25rem;
+	}
+	.contact li::before {
+		content: "/";
+		content: "/" / ""; /* decorative: screen readers skip it */
+		position: absolute;
+		left: -0.85rem;
 		color: var(--rule);
 	}
 	.summary {
 		margin: 1.5rem 0 0;
 		max-width: 38rem;
+	}
+	.worked-with {
+		margin: 1rem 0 0;
+		max-width: 38rem;
+		font-weight: 500;
+	}
+	.ww-label {
+		color: var(--muted);
+		font-weight: 400;
+		margin-right: 0.35rem;
 	}
 	.print-hint button {
 		font: inherit;

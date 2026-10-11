@@ -17,25 +17,10 @@ export const CV = {
 	headline: "Principal engineer, infrastructure platforms. Platform engineering, AWS and AI.",
 	location: "Waterloo, Ontario, Canada",
 	summary:
-		"I came up through network operations and DevOps, led an AWS consulting practice, and am now a principal engineer on Riot Games’ infrastructure platform, the foundation League of Legends and VALORANT run on. I care about the unglamorous parts: clear interfaces, safe defaults, and making the right thing the easy thing for the engineers who build on what I make.",
+		"I came up through network operations and DevOps, led an AWS consulting practice, and for the last seven years have helped Riot Games move a global games platform from bare metal to the cloud, along with the cloud-native way of building and running games that comes with it. Over the last four years, I’ve also helped lead efficiency work that delivered nine figures in recurring infrastructure savings. I lead through influence and relationships, not authority: earning trust, building alignment across teams, and helping the engineers around me do their best work.",
+	// Names shown under the intro, in this order.
+	workedWith: ["Riot Games", "AWS", "Deloitte", "Scotiabank", "TD Bank", "RBC", "Mastercard", "Government of Canada"],
 	employers: [
-		{
-			org: "one24",
-			location: "Waterloo, Ontario",
-			roles: [
-				{
-					title: "Founder and engineer",
-					start: "May 2026",
-					summary: "Open source tools that make AI coding agents more capable and safer to use day to day: three pi packages, and Kiln.",
-					highlights: [
-						"pi-halo: a workbench for pi, with Build and Plan modes, a git diff view, and commands that draft commit messages and pull requests",
-						"pi-domain: persistent memory, so an agent carries decisions, preferences and lessons between sessions",
-						"pi-containment: a guard layer that decides which actions an agent can take on its own, which need approval, and which are never allowed",
-						"Kiln (in design): a standalone, agent-driven CI/CD system where deterministic pipelines decide pass or fail and agents triage failures, propose fixes and watch rollouts",
-					],
-				},
-			],
-		},
 		{
 			org: "Riot Games",
 			location: "Waterloo, Ontario",
@@ -44,16 +29,15 @@ export const CV = {
 					title: "Principal engineer, infrastructure",
 					start: "Oct 2020",
 					summary:
-						"Technical leader for the infrastructure platform behind League of Legends, VALORANT and the rest of Riot’s games, from cloud foundations and container orchestration to deployment tooling and AI-assisted operations.",
+						"Technical leader for the infrastructure platform behind games played by millions every day, including League of Legends and VALORANT. My scope covers cloud foundations, container orchestration, deployment tooling, cost efficiency, and AI for both players and engineers.",
 					highlights: [
 						"Set the technical direction for modernizing the core deployment and orchestration layers",
 						"Lead the design and operation of a global, game-scale platform on Amazon EKS",
 						"Help shape how Riot brings AI to players, including the architecture for serving models in production",
 						"Build AI tooling that makes everyday engineering faster and safer",
-						"Help lead a multi-year infrastructure efficiency strategy, with savings in data streaming and game server scheduling",
+						"Help lead a multi-year infrastructure efficiency strategy that has delivered nine figures in recurring savings, including data streaming and game server scheduling",
 						"Help build a self-service platform for deploying internal apps",
 						"Mentor engineers and help shape how senior technical leaders work together across the org",
-						"Keynote at Games on AWS Korea (2023) on how Riot and AWS build low-latency infrastructure for players",
 					],
 				},
 				{
