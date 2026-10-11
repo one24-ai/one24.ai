@@ -18,7 +18,7 @@ export const CV = {
 	headline: "Principal Engineer at Riot Games. Platform engineering, AWS and AI.",
 	location: "Waterloo, Ontario, Canada",
 	summary:
-		"I came up through network operations and DevOps, led an AWS consulting practice, and for the last seven years have been a technical leader in moving Riot Games’ global platform from bare metal to the cloud, and to the cloud-native way of working that comes with it. Over the last four years, I’ve also shaped and delivered efficiency work that produced nine figures in recurring infrastructure savings. I lead through influence and relationships, not authority: earning trust, building alignment across teams, and helping the engineers around me do their best work.",
+		"I came up through network operations and DevOps, led an AWS consulting practice, and for the last seven years have been a technical leader in moving Riot Games’ global platform from bare metal to the cloud, and to the cloud-native way of working that comes with it. Over the last four years, I’ve also shaped and delivered efficiency work that has produced nine figures in recurring infrastructure savings. I lead through influence and relationships, not authority: earning trust, building alignment across teams, and helping the engineers around me do their best work.",
 	// Names shown under the intro, in this order.
 	workedWith: ["Riot Games", "AWS", "Deloitte", "Scotiabank", "TD Bank", "RBC", "Mastercard", "Government of Canada"],
 	employers: [
@@ -43,9 +43,9 @@ export const CV = {
 						{
 							label: "Results",
 							items: [
-								"Shaped and delivered a multi-year efficiency strategy that produced nine figures in recurring savings without compromising the player experience",
-								"Influenced the design of Riot’s tooling for running AI models in production, now powering a launched player-facing feature with more on the way",
-								"Built AI tooling that makes everyday engineering at Riot faster and safer",
+								"Shape and deliver a multi-year efficiency strategy that has produced nine figures in recurring savings without compromising the player experience",
+								"Influence the design of Riot’s tooling for running AI models in production, now powering a launched player-facing feature with more on the way",
+								"Build AI tooling that makes everyday engineering at Riot faster and safer",
 							],
 						},
 						{
@@ -53,7 +53,7 @@ export const CV = {
 							items: [
 								"Set the technical direction for the infrastructure platform, aligning 8 teams and ~70 engineers on a shared cloud-native roadmap without direct authority",
 								"Represent Riot as a key technical voice in its partnership with AWS, influencing how both companies build infrastructure for games",
-								"Built the forums where the infrastructure platform’s senior engineers make architecture decisions together, setting Riot-wide standards with the player experience in mind",
+								"Lead the forums where the infrastructure platform’s senior engineers make architecture decisions together, setting Riot-wide standards with the player experience in mind",
 							],
 						},
 					],
