@@ -78,8 +78,11 @@ export const CV = {
 					title: "Consultant (contract)",
 					start: "Mar 2021",
 					end: "May 2022",
-					summary:
-						"Took on occasional short-term contracts with Deloitte, providing cloud architecture advisory and delivery services to its clients. For Central 1, reviewed the application architecture and processes behind its RTR platform on AWS and gave remediation recommendations to stakeholders. For a federal defence-sector client in the Government of Canada, analyzed multi-cloud strategy and wrote the initial cloud architecture documentation.",
+					summary: "Occasional short-term cloud architecture engagements for Deloitte clients.",
+					highlights: [
+						"Assessed the architecture and processes behind Central 1’s real-time payments (RTR) platform on AWS and gave remediation recommendations to its stakeholders",
+						"Analyzed multi-cloud strategy and wrote the initial cloud architecture for a federal defence-sector client in the Government of Canada",
+					],
 				},
 			],
 		},
@@ -91,15 +94,21 @@ export const CV = {
 					title: "Senior consultant, AWS practice lead (North America)",
 					start: "Jul 2018",
 					end: "Sep 2019",
-					summary:
-						"Led the AWS practice for North America, running on-site delivery teams of consultants and client staff through cloud and DevOps transformations at financial institutions including Scotiabank, TD Bank, RBC and Mastercard. Drove strategic partner work with AWS, including rolling out the Well-Architected Partner Program across North America and training AWS consultants. Supported new business through pre-sales, requirements gathering and solution design, and audited client environments for improvements. Helped build the recruiting and interview process for the Canadian office.",
+					highlights: [
+						"Led the AWS practice for North America, running on-site teams of consultants and client staff through cloud and DevOps transformations at Scotiabank, TD Bank, RBC and Mastercard",
+						"Rolled out the AWS Well-Architected Partner Program across North America and trained AWS consultants",
+						"Drove new business through pre-sales and solution design, and helped build the Canadian office’s recruiting and interview process",
+					],
 				},
 				{
 					title: "Consultant",
 					start: "Jun 2016",
 					end: "Jul 2018",
-					summary:
-						"Delivered AWS and Azure solutions for large-scale enterprise cloud adoption, mostly for Canada’s largest financial institutions. Designed and built the foundations of a highly compliant, scalable Azure platform for a tier 1 bank, and a continuous delivery pipeline that stood up dynamic environments on Azure for another. Built a DevOps process and a resilient AWS platform for a complex Drupal environment. Wrote the automation behind this work in Python, CloudFormation, ARM, Puppet and PowerShell.",
+					highlights: [
+						"Designed and built the foundations of a highly compliant, scalable Azure platform for a tier 1 Canadian bank",
+						"Built a continuous delivery pipeline that stood up dynamic Azure environments for another of Canada’s largest banks",
+						"Built a DevOps process and a resilient AWS platform for a complex Drupal environment, automated with Python, CloudFormation, ARM, Puppet and PowerShell",
+					],
 				},
 			],
 		},
@@ -111,8 +120,10 @@ export const CV = {
 					title: "DevOps engineer",
 					start: "Jul 2015",
 					end: "Jun 2016",
-					summary:
-						"Part of the core team driving cloud adoption at a cybersecurity company, and the person defining and advocating for DevOps across the organization. Built self-service tools for developers to provision consistent environments from dev through QA and UAT, and centralized logging on the ELK stack for internal DevOps services. Created an automated build-and-test process for ready-to-deploy machine images (AMI, Glance, OVF). Researched and recommended infrastructure improvements to management.",
+					highlights: [
+						"Core member of the team driving cloud adoption at a cybersecurity company, and its leading advocate for DevOps practices",
+						"Built self-service environment provisioning, centralized ELK logging, and automated build-and-test for ready-to-deploy machine images",
+					],
 				},
 			],
 		},
@@ -124,15 +135,19 @@ export const CV = {
 					title: "SaaS operations tools administrator",
 					start: "Oct 2014",
 					end: "Jul 2015",
-					summary:
-						"Built self-service tools and automation for standard changes in SaaS operations, integrating monitoring and APM tools, the CRM, the ITSM platform and capacity planning systems. Partnered with the architecture team to automate how the SaaS platforms were operated and deployed. Worked with information security on incident triage and lessons learned, leading to a vulnerability management system that sharply cut response time to risks on critical infrastructure. Trained and mentored new team members and wrote the team’s operating procedures.",
+					highlights: [
+						"Built self-service tools and automation for standard SaaS operations changes, integrated with monitoring, ITSM and capacity planning systems",
+						"Partnered with information security on incident response, leading to a vulnerability management system that sharply cut response time to critical risks",
+					],
 				},
 				{
 					title: "SaaS NOC administrator",
 					start: "Aug 2013",
 					end: "Oct 2014",
-					summary:
-						"Shift leader in the network operations centre, monitoring client-facing SaaS applications and keeping production and test environments within their service levels. Took the lead during major incidents, owning the process from troubleshooting through root cause analysis. Built an incident notification web app that delivered timely, consistent updates to every stakeholder and kept information aligned across internal platforms. Enforced change management and kept to tight maintenance windows.",
+					highlights: [
+						"Shift leader in the network operations centre, owning major incidents from troubleshooting through root cause analysis",
+						"Built an incident notification app that kept every stakeholder informed with timely, consistent updates",
+					],
 				},
 			],
 		},
