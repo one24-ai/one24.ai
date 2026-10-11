@@ -18,7 +18,7 @@ export const CV = {
 	headline: "Principal engineer, infrastructure platforms. Platform engineering, AWS and AI.",
 	location: "Waterloo, Ontario, Canada",
 	summary:
-		"I came up through network operations and DevOps, led an AWS consulting practice, and for the last seven years have helped Riot Games move a global games platform from bare metal to the cloud, along with the cloud-native way of building and running games that comes with it. Over the last four years, I’ve also helped lead efficiency work that delivered nine figures in recurring infrastructure savings. I lead through influence and relationships, not authority: earning trust, building alignment across teams, and helping the engineers around me do their best work.",
+		"I came up through network operations and DevOps, led an AWS consulting practice, and for the last seven years have been a technical leader in Riot Games’ move of a global games platform from bare metal to the cloud, along with the cloud-native way of building and running games that comes with it. Over the last four years, I’ve also shaped and delivered efficiency work that produced nine figures in recurring infrastructure savings. I lead through influence and relationships, not authority: earning trust, building alignment across teams, and helping the engineers around me do their best work.",
 	// Names shown under the intro, in this order.
 	workedWith: ["Riot Games", "AWS", "Deloitte", "Scotiabank", "TD Bank", "RBC", "Mastercard", "Government of Canada"],
 	employers: [
@@ -35,8 +35,8 @@ export const CV = {
 						{
 							label: "Platform",
 							items: [
-								"Helped lead Riot’s move out of 11 data centres into 18 AWS locations, putting games closer to players for a better experience and the low latency a game like VALORANT demands",
-								"Helped lead the design and global rollout of Riot’s Kubernetes platform on Amazon EKS, now running thousands of microservices across 14 regions",
+								"Drove key parts of Riot’s move out of 11 data centres into 18 AWS locations, putting games closer to players for a better experience and the low latency a game like VALORANT demands",
+								"Led key design decisions for the global rollout of Riot’s Kubernetes platform on Amazon EKS, now running thousands of microservices across 14 regions",
 								"Raised availability of core platform services to 99.9% by modernizing the stack on AWS",
 							],
 						},
@@ -44,7 +44,7 @@ export const CV = {
 							label: "Results",
 							items: [
 								"Shaped and delivered a multi-year efficiency strategy that produced nine figures in recurring savings without compromising the player experience",
-								"Helped influence and design Riot’s tooling for running AI models in production, now powering a launched player-facing feature with more on the way",
+								"Shaped Riot’s tooling for running AI models in production, now powering a launched player-facing feature with more on the way",
 								"Built AI tooling that makes everyday engineering at Riot faster and safer",
 								"Key technical voice in Riot’s partnership with AWS, influencing how both companies build infrastructure for games",
 							],
