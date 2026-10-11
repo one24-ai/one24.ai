@@ -15,7 +15,7 @@ export interface Employer {
 }
 
 export const CV = {
-	headline: "Principal Engineer, Infrastructure at Riot Games. Platform engineering, AWS and AI.",
+	headline: "Principal Engineer at Riot Games. Platform engineering, AWS and AI.",
 	location: "Waterloo, Ontario, Canada",
 	summary:
 		"I came up through network operations and DevOps, led an AWS consulting practice, and for the last seven years have been a technical leader in Riot Games’ move of a global games platform from bare metal to the cloud, along with the cloud-native way of building and running games that comes with it. Over the last four years, I’ve also shaped and delivered efficiency work that produced nine figures in recurring infrastructure savings. I lead through influence and relationships, not authority: earning trust, building alignment across teams, and helping the engineers around me do their best work.",
