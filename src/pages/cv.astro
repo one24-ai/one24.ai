@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import { CV } from "../cv";
 import { SITE } from "../site";
+import { TALKS, PODCASTS } from "../speaking";
 
 const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 ---
@@ -11,16 +12,16 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 		<header class="cv-head">
 			<h1>{SITE.name}</h1>
 			<p class="headline">{CV.headline}</p>
-			<p class="contact">
-				{CV.location}
-				<span class="sep" aria-hidden="true">/</span>
-				<a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-				<span class="sep" aria-hidden="true">/</span>
-				<a href={SITE.linkedin}>LinkedIn</a>
-				<span class="sep" aria-hidden="true">/</span>
-				<a href={SITE.github}>GitHub</a>
-			</p>
+			<div class="contact">
+				<ul>
+					<li>{CV.location}</li>
+					<li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+					<li><a href={SITE.linkedin}>LinkedIn</a></li>
+					<li><a href={SITE.github}>GitHub</a></li>
+				</ul>
+			</div>
 			<p class="summary">{CV.summary}</p>
+			<p class="worked-with"><span class="ww-label">Worked with</span> {CV.workedWith.join(" · ")}</p>
 			<p class="print-hint"><button type="button" onclick="window.print()">Print or save as PDF</button></p>
 		</header>
 
@@ -47,6 +48,16 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 												))}
 											</ul>
 										)}
+										{r.groups?.map((g) => (
+											<div class="group">
+												<p class="group-label">{g.label}</p>
+												<ul>
+													{g.items.map((h) => (
+														<li>{h}</li>
+													))}
+												</ul>
+											</div>
+										))}
 									</div>
 								))}
 							</div>
@@ -56,9 +67,40 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 			</ol>
 		</section>
 
+		<section aria-labelledby="speaking">
+			<h2 id="speaking">Speaking</h2>
+			<p class="screen-only speaking-link">
+				Conference keynotes, meetup talks and podcasts, with links and summaries, are on my{" "}
+				<a href="/speaking/">Speaking page</a>.
+			</p>
+			{/* Printed and PDF copies can't follow a link, so they list the talks instead. */}
+			<ul class="print-only talks">
+				{
+					[...TALKS, ...PODCASTS]
+						.sort((x, y) => Number(y.year ?? 0) - Number(x.year ?? 0))
+						.map((t) => (
+						<li>
+							{t.year && <span class="when">{t.year}</span>}
+							<span>
+								{t.title ? `${t.title}. ` : ""}
+								{t.event} · {t.format}
+							</span>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+
 		<section aria-labelledby="skills">
 			<h2 id="skills">Skills</h2>
-			<ul class="skills">{CV.skills.map((s) => <li>{s}</li>)}</ul>
+			{
+				CV.skills.map((g) => (
+					<div class="skill-group">
+						<p class="group-label">{g.label}</p>
+						<ul class="skills">{g.items.map((s) => <li>{s}</li>)}</ul>
+					</div>
+				))
+			}
 		</section>
 
 		<section aria-labelledby="edu">
@@ -92,20 +134,44 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 		font-size: var(--step-2);
 		margin: 0.5rem 0 0;
 	}
+	/* Contact line: items wrap on small screens, and the "/" separator that would
+	   start a new line is clipped off, so a line never begins with a slash. */
 	.contact {
-		display: flex;
-		flex-wrap: wrap; /* let the contact line wrap on small phones */
-		align-items: baseline;
+		overflow: hidden;
 		color: var(--muted);
 		margin: 0.75rem 0 0;
 	}
-	.sep {
-		margin-inline: 0.5rem;
+	.contact ul {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		padding: 0;
+		margin: 0 0 0 -1.25rem;
+	}
+	.contact li {
+		position: relative;
+		margin-left: 1.25rem;
+	}
+	.contact li::before {
+		content: "/";
+		content: "/" / ""; /* decorative: screen readers skip it */
+		position: absolute;
+		left: -0.85rem;
 		color: var(--rule);
 	}
 	.summary {
 		margin: 1.5rem 0 0;
 		max-width: 38rem;
+	}
+	.worked-with {
+		margin: 1rem 0 0;
+		max-width: 38rem;
+		font-weight: 500;
+	}
+	.ww-label {
+		color: var(--muted);
+		font-weight: 400;
+		margin-right: 0.35rem;
 	}
 	.print-hint button {
 		font: inherit;
@@ -164,6 +230,20 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 	.role ul {
 		padding-left: 1.1rem;
 	}
+	.group {
+		margin-top: 1rem;
+	}
+	.entries .group-label {
+		margin: 0;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+	.entries .group-label + ul {
+		margin-top: 0.35rem;
+	}
 	.role li + li {
 		margin-top: 0.3rem;
 	}
@@ -171,6 +251,43 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 	.entries ul {
 		margin: 0.5rem 0 0;
 		max-width: 38rem;
+	}
+	.speaking-link {
+		margin: 0.5rem 0 0;
+		max-width: 38rem;
+	}
+	.print-only {
+		display: none;
+	}
+	.talks {
+		list-style: none;
+		padding: 0;
+		margin: 0.5rem 0 0;
+	}
+	.talks li {
+		display: grid;
+		grid-template-columns: 3.5rem 1fr;
+		gap: 1rem;
+	}
+	.talks li + li {
+		margin-top: 0.3rem;
+	}
+	.talks .when {
+		margin: 0;
+	}
+	.skill-group + .skill-group {
+		margin-top: 1rem;
+	}
+	.skill-group .group-label {
+		margin: 1rem 0 0;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+	.skill-group .skills {
+		margin-top: 0.5rem;
 	}
 	.skills {
 		display: flex;
@@ -192,17 +309,39 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 		}
 	}
 	@media print {
-		.print-hint {
+		.print-hint,
+		.screen-only {
 			display: none;
+		}
+		.print-only {
+			display: block;
 		}
 		h2 {
 			margin-top: 1.5rem;
 		}
 		/* Let long employers and roles flow across pages instead of leaving blank gaps.
 		   Keep headings with what follows, and don't split a paragraph or bullet. */
-		.org,
+		/* Chrome won't split a CSS grid row across pages, so in print the
+		   employer column floats instead and long employers can flow. */
+		section[aria-labelledby="exp"] .entries > li {
+			display: block;
+		}
+		section[aria-labelledby="exp"] .entries > li > .org {
+			float: left;
+			width: 11rem;
+		}
+		section[aria-labelledby="exp"] .entries > li > div:last-child {
+			margin-left: 13rem;
+		}
+		section[aria-labelledby="exp"] .entries > li::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		h2,
 		.role h4,
-		.role .when {
+		.role .when,
+		.group-label {
 			break-after: avoid;
 		}
 		.role p,
