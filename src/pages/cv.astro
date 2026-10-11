@@ -70,13 +70,15 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 		<section aria-labelledby="speaking">
 			<h2 id="speaking">Speaking</h2>
 			<p class="screen-only speaking-link">
-				Conference keynotes, meetup talks and podcasts, with links and summaries, are on my
+				Conference keynotes, meetup talks and podcasts, with links and summaries, are on my{" "}
 				<a href="/speaking/">Speaking page</a>.
 			</p>
 			{/* Printed and PDF copies can't follow a link, so they list the talks instead. */}
 			<ul class="print-only talks">
 				{
-					[...TALKS, ...PODCASTS].map((t) => (
+					[...TALKS, ...PODCASTS]
+						.sort((x, y) => Number(y.year ?? 0) - Number(x.year ?? 0))
+						.map((t) => (
 						<li>
 							{t.year && <span class="when">{t.year}</span>}
 							<span>
