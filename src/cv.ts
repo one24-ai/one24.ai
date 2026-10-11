@@ -15,7 +15,7 @@ export interface Employer {
 }
 
 export const CV = {
-	headline: "Principal engineer, infrastructure at Riot Games. The platform behind League of Legends and VALORANT. Platform engineering, AWS and AI.",
+	headline: "Principal Engineer, Infrastructure at Riot Games. Platform engineering, AWS and AI.",
 	location: "Waterloo, Ontario, Canada",
 	summary:
 		"I came up through network operations and DevOps, led an AWS consulting practice, and for the last seven years have been a technical leader in Riot Games’ move of a global games platform from bare metal to the cloud, along with the cloud-native way of building and running games that comes with it. Over the last four years, I’ve also shaped and delivered efficiency work that produced nine figures in recurring infrastructure savings. I lead through influence and relationships, not authority: earning trust, building alignment across teams, and helping the engineers around me do their best work.",
@@ -27,7 +27,7 @@ export const CV = {
 			location: "Waterloo, Ontario",
 			roles: [
 				{
-					title: "Principal engineer, infrastructure",
+					title: "Principal Engineer, Infrastructure",
 					start: "Oct 2020",
 					summary:
 						"Technical leader for the infrastructure platform behind games played by millions every day, including League of Legends and VALORANT. My scope covers cloud foundations, container orchestration, deployment tooling, cost efficiency, and AI for both players and engineers.",
@@ -59,7 +59,7 @@ export const CV = {
 					],
 				},
 				{
-					title: "Senior systems engineer (contract)",
+					title: "Senior Systems Engineer (Contract)",
 					start: "Oct 2019",
 					end: "Oct 2020",
 					highlights: [
@@ -75,7 +75,7 @@ export const CV = {
 			location: "Remote",
 			roles: [
 				{
-					title: "Consultant (contract)",
+					title: "Consultant (Contract)",
 					start: "Mar 2021",
 					end: "May 2022",
 					summary: "Occasional short-term cloud architecture engagements for Deloitte clients.",
@@ -91,7 +91,7 @@ export const CV = {
 			location: "Toronto, Ontario",
 			roles: [
 				{
-					title: "Senior consultant, AWS practice lead (North America)",
+					title: "Senior Consultant, AWS Practice Lead (North America)",
 					start: "Jul 2018",
 					end: "Sep 2019",
 					highlights: [
@@ -117,7 +117,7 @@ export const CV = {
 			location: "Cambridge, Ontario",
 			roles: [
 				{
-					title: "DevOps engineer",
+					title: "DevOps Engineer",
 					start: "Jul 2015",
 					end: "Jun 2016",
 					highlights: [
@@ -132,7 +132,7 @@ export const CV = {
 			location: "Kitchener, Ontario",
 			roles: [
 				{
-					title: "SaaS operations tools administrator",
+					title: "SaaS Operations Tools Administrator",
 					start: "Oct 2014",
 					end: "Jul 2015",
 					highlights: [
@@ -141,7 +141,7 @@ export const CV = {
 					],
 				},
 				{
-					title: "SaaS NOC administrator",
+					title: "SaaS NOC Administrator",
 					start: "Aug 2013",
 					end: "Oct 2014",
 					highlights: [
@@ -156,7 +156,7 @@ export const CV = {
 			location: "Waterloo, Ontario",
 			roles: [
 				{
-					title: "IT operations supervisor",
+					title: "IT Operations Supervisor",
 					start: "Jan 2009",
 					end: "Aug 2013",
 					summary:
@@ -169,7 +169,7 @@ export const CV = {
 			location: "Kansas City, Missouri (remote)",
 			roles: [
 				{
-					title: "Web developer",
+					title: "Web Developer",
 					start: "Dec 2008",
 					end: "Oct 2010",
 					summary:
