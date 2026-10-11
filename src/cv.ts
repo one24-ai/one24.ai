@@ -92,8 +92,7 @@ export const CV = {
 					start: "Jul 2018",
 					end: "Sep 2019",
 					summary:
-						"Led the AWS practice for North America, running on-site delivery teams of consultants and client staff through cloud and DevOps transformations at top-tier Canadian financial institutions. Drove strategic partner work with AWS, including rolling out the Well-Architected Partner Program across North America and training AWS consultants. Supported new business through pre-sales, requirements gathering and solution design, and audited client environments for improvements. Helped build the recruiting and interview process for the Canadian office.",
-					highlights: ["Ignite talk at DevOpsDays Toronto (2019): “Preventative and Detective Control for Security Conscious Organizations”"],
+						"Led the AWS practice for North America, running on-site delivery teams of consultants and client staff through cloud and DevOps transformations at financial institutions including Scotiabank, TD Bank, RBC and Mastercard. Drove strategic partner work with AWS, including rolling out the Well-Architected Partner Program across North America and training AWS consultants. Supported new business through pre-sales, requirements gathering and solution design, and audited client environments for improvements. Helped build the recruiting and interview process for the Canadian office.",
 				},
 				{
 					title: "Consultant",
@@ -146,7 +145,7 @@ export const CV = {
 					start: "Jan 2009",
 					end: "Aug 2013",
 					summary:
-						"Ran IT for a 60+ person organization across four Ontario offices, providing 24/7 support to local and remote staff. Managed core systems including Active Directory, Exchange, Lotus Domino, BlackBerry Enterprise Server and the EMR servers, on a secure multi-site Cisco network. Planned and rolled out new deployments such as VoIP, eFax and EMR, from product research and purchasing through installation. Managed vendor relationships and met regularly with senior management to keep IT aligned with company finances and goals.",
+						"Ran IT for a 60+ person organization across four Ontario offices, from 24/7 support and core systems on a multi-site Cisco network to new rollouts like VoIP and EMR.",
 				},
 			],
 		},
@@ -159,7 +158,7 @@ export const CV = {
 					start: "Dec 2008",
 					end: "Oct 2010",
 					summary:
-						"Built database-driven web applications in PHP and MySQL for a design studio, working remotely. Created easy-to-use content management systems and turned Photoshop designs into HTML and CSS pages. Managed the Linux development and production hosting servers, and helped with project management on team projects.",
+						"Built database-driven PHP and MySQL web apps and content management systems for a design studio, and ran its Linux hosting.",
 				},
 			],
 		},
