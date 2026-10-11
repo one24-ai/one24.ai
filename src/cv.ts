@@ -18,7 +18,7 @@ export const CV = {
 	headline: "Principal Engineer at Riot Games. Platform engineering, AWS and AI.",
 	location: "Waterloo, Ontario, Canada",
 	summary:
-		"I came up through network operations and DevOps, led an AWS consulting practice, and for the last seven years have been a technical leader in Riot Games’ move of a global games platform from bare metal to the cloud, along with the cloud-native way of building and running games that comes with it. Over the last four years, I’ve also shaped and delivered efficiency work that produced nine figures in recurring infrastructure savings. I lead through influence and relationships, not authority: earning trust, building alignment across teams, and helping the engineers around me do their best work.",
+		"I came up through network operations and DevOps, led an AWS consulting practice, and for the last seven years have been a technical leader in moving Riot Games’ global platform from bare metal to the cloud, and to the cloud-native way of working that comes with it. Over the last four years, I’ve also shaped and delivered efficiency work that produced nine figures in recurring infrastructure savings. I lead through influence and relationships, not authority: earning trust, building alignment across teams, and helping the engineers around me do their best work.",
 	// Names shown under the intro, in this order.
 	workedWith: ["Riot Games", "AWS", "Deloitte", "Scotiabank", "TD Bank", "RBC", "Mastercard", "Government of Canada"],
 	employers: [
@@ -44,9 +44,9 @@ export const CV = {
 							label: "Results",
 							items: [
 								"Shaped and delivered a multi-year efficiency strategy that produced nine figures in recurring savings without compromising the player experience",
-								"Shaped Riot’s tooling for running AI models in production, now powering a launched player-facing feature with more on the way",
+								"Influenced the design of Riot’s tooling for running AI models in production, now powering a launched player-facing feature with more on the way",
 								"Built AI tooling that makes everyday engineering at Riot faster and safer",
-								"Key technical voice in Riot’s partnership with AWS, influencing how both companies build infrastructure for games",
+								"Represent Riot as a key technical voice in its partnership with AWS, influencing how both companies build infrastructure for games",
 							],
 						},
 						{
