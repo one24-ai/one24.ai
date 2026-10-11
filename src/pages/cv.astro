@@ -47,6 +47,16 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 												))}
 											</ul>
 										)}
+										{r.groups?.map((g) => (
+											<div class="group">
+												<p class="group-label">{g.label}</p>
+												<ul>
+													{g.items.map((h) => (
+														<li>{h}</li>
+													))}
+												</ul>
+											</div>
+										))}
 									</div>
 								))}
 							</div>
@@ -188,6 +198,20 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 	.role ul {
 		padding-left: 1.1rem;
 	}
+	.group {
+		margin-top: 1rem;
+	}
+	.entries .group-label {
+		margin: 0;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+	.entries .group-label + ul {
+		margin-top: 0.35rem;
+	}
 	.role li + li {
 		margin-top: 0.3rem;
 	}
@@ -226,7 +250,8 @@ const span = (start: string, end?: string) => `${start} to ${end ?? "present"}`;
 		   Keep headings with what follows, and don't split a paragraph or bullet. */
 		.org,
 		.role h4,
-		.role .when {
+		.role .when,
+		.group-label {
 			break-after: avoid;
 		}
 		.role p,

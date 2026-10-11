@@ -5,6 +5,7 @@ export interface Role {
 	end?: string; // omit for current
 	summary?: string;
 	highlights?: string[];
+	groups?: { label: string; items: string[] }[]; // labelled bullet groups, shown after highlights
 }
 
 export interface Employer {
@@ -30,22 +31,42 @@ export const CV = {
 					start: "Oct 2020",
 					summary:
 						"Technical leader for the infrastructure platform behind games played by millions every day, including League of Legends and VALORANT. My scope covers cloud foundations, container orchestration, deployment tooling, cost efficiency, and AI for both players and engineers.",
-					highlights: [
-						"Set the technical direction for modernizing the core deployment and orchestration layers",
-						"Lead the design and operation of a global, game-scale platform on Amazon EKS",
-						"Help shape how Riot brings AI to players, including the architecture for serving models in production",
-						"Build AI tooling that makes everyday engineering faster and safer",
-						"Help lead a multi-year infrastructure efficiency strategy that has delivered nine figures in recurring savings, including data streaming and game server scheduling",
-						"Help build a self-service platform for deploying internal apps",
-						"Mentor engineers and help shape how senior technical leaders work together across the org",
+					groups: [
+						{
+							label: "Platform",
+							items: [
+								"Helped lead Riot’s move out of 11 data centres into 18 AWS locations, putting games closer to players for a better experience and the low latency a game like VALORANT demands",
+								"Helped lead the design and global rollout of Riot’s Kubernetes platform on Amazon EKS, now running thousands of microservices across 14 regions",
+								"Raised availability of core platform services to 99.9% by modernizing the stack on AWS",
+							],
+						},
+						{
+							label: "Results",
+							items: [
+								"Shaped and delivered a multi-year efficiency strategy that produced nine figures in recurring savings without compromising the player experience",
+								"Helped influence and design Riot’s tooling for running AI models in production, now powering a launched player-facing feature with more on the way",
+								"Built AI tooling that makes everyday engineering at Riot faster and safer",
+								"Key technical voice in Riot’s partnership with AWS, influencing how both companies build infrastructure for games",
+							],
+						},
+						{
+							label: "Leading through influence",
+							items: [
+								"Set the technical direction for the infrastructure platform, aligning 8 teams and ~70 engineers on a shared cloud-native roadmap without direct authority",
+								"Built the forums where the infrastructure platform’s senior engineers make architecture decisions together, setting Riot-wide standards with the player experience in mind",
+							],
+						},
 					],
 				},
 				{
 					title: "Senior systems engineer (contract)",
 					start: "Oct 2019",
 					end: "Oct 2020",
-					summary:
-						"Built geo-aware DNS for core services and made the proxy fleet scale automatically with demand.",
+					highlights: [
+						"Built geo-aware DNS for core services, routing players to the nearest healthy region",
+						"Made the edge proxy fleet scale automatically with demand, ending manual scaling for launches and events",
+						"Built deployment pipelines in Jenkins, Python and Terraform",
+					],
 				},
 			],
 		},
