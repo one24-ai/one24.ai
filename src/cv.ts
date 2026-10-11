@@ -46,13 +46,13 @@ export const CV = {
 								"Shaped and delivered a multi-year efficiency strategy that produced nine figures in recurring savings without compromising the player experience",
 								"Influenced the design of Riot’s tooling for running AI models in production, now powering a launched player-facing feature with more on the way",
 								"Built AI tooling that makes everyday engineering at Riot faster and safer",
-								"Represent Riot as a key technical voice in its partnership with AWS, influencing how both companies build infrastructure for games",
 							],
 						},
 						{
 							label: "Leading through influence",
 							items: [
 								"Set the technical direction for the infrastructure platform, aligning 8 teams and ~70 engineers on a shared cloud-native roadmap without direct authority",
+								"Represent Riot as a key technical voice in its partnership with AWS, influencing how both companies build infrastructure for games",
 								"Built the forums where the infrastructure platform’s senior engineers make architecture decisions together, setting Riot-wide standards with the player experience in mind",
 							],
 						},
