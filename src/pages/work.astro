@@ -22,20 +22,26 @@ import { SITE } from "../site";
 
 		<section aria-labelledby="consulting" class="consulting">
 			<h2 id="consulting">Consulting</h2>
-			{/* DRAFT: Zach to confirm the offers and wording. */}
-			<div class="prose">
+			<div class="consulting-body">
 				<p>
-					I help engineering teams adopt AI in a way their engineers trust: agents that work inside your
-					platform’s rules, with the engineer reviewing and steering, not rubber-stamping.
+					I help engineering teams build a culture of efficiency with AI. It’s a smaller shift than most teams
+					expect: agents can be fitted to the tools and workflows you already have, so nobody has to change how
+					they work. Context switching gets close to free, and output goes up without burning people out.
+				</p>
+				<p>
+					Doing that safely is the hard part, and it’s what I’m good at: agents that work inside your platform’s
+					rules, with engineers reviewing and steering, not rubber-stamping. The work tends to look like this:
 				</p>
 				<ul>
-					<li>Rolling out coding agents across a team, with guardrails and a workflow people keep using.</li>
+					<li>Mapping AI to your engineers’ existing workflow, with guardrails and habits people keep using.</li>
+					<li>Paying down tech debt fast, without building or migrating to new tools and systems.</li>
 					<li>Building internal tools and extensions so agents can reach your platform safely.</li>
 					<li>Rethinking platform engineering for a world where agents are users of your platform too.</li>
 				</ul>
 				<p>
-					If that sounds like your team, <a href={`mailto:${SITE.email}?subject=Consulting`}>email me</a> with a
-					few lines about where you are today.
+					I take on a small number of engagements, usually through referrals, so I can’t say yes to everything.
+					If it sounds like a fit, <a href={`mailto:${SITE.email}?subject=Consulting`}>email me</a> with a few
+					lines about your team and where you are today.
 				</p>
 			</div>
 		</section>
@@ -61,5 +67,17 @@ import { SITE } from "../site";
 	}
 	.consulting {
 		margin-top: 2rem;
+	}
+	.consulting-body {
+		max-width: var(--measure);
+	}
+	.consulting-body > * {
+		margin: 1em 0 0;
+	}
+	.consulting-body > :first-child {
+		margin-top: 0;
+	}
+	.consulting-body li + li {
+		margin-top: 0.4em;
 	}
 </style>
