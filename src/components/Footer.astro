@@ -12,8 +12,41 @@ const year = new Date().getFullYear();
 		<li><a href={SITE.linkedin}>LinkedIn</a></li>
 		<li><a href="/rss.xml">RSS</a></li>
 	</ul>
+	{/* Hidden without JavaScript; the site then just follows the OS setting. */}
+	<div class="theme-switch" role="group" aria-label="Colour theme" hidden>
+		<button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
+		<button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+		<button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+	</div>
 	<p class="copy">© {year} {SITE.name}</p>
 </footer>
+
+<script>
+	// Progressive enhancement: Auto clears the saved choice; Light and Dark are remembered.
+	const root = document.documentElement;
+	const group = document.querySelector<HTMLElement>(".theme-switch");
+	if (group) {
+		const buttons = group.querySelectorAll<HTMLButtonElement>("[data-theme-choice]");
+		const sync = () => {
+			const current = root.dataset.theme ?? "auto";
+			buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.themeChoice === current)));
+		};
+		buttons.forEach((b) =>
+			b.addEventListener("click", () => {
+				const choice = b.dataset.themeChoice;
+				if (choice === "light" || choice === "dark") root.dataset.theme = choice;
+				else delete root.dataset.theme;
+				try {
+					if (choice === "auto") localStorage.removeItem("theme");
+					else localStorage.setItem("theme", choice!);
+				} catch {}
+				sync();
+			}),
+		);
+		sync();
+		group.hidden = false;
+	}
+</script>
 
 <style>
 	.site-footer {
@@ -43,7 +76,39 @@ const year = new Date().getFullYear();
 	a:hover {
 		color: var(--ink);
 	}
+	.theme-switch {
+		display: inline-flex;
+		margin-left: auto;
+		border: 1px solid var(--rule);
+		border-radius: 999px;
+		padding: 2px;
+	}
+	.theme-switch[hidden] {
+		display: none;
+	}
+	.theme-switch button {
+		font: inherit;
+		font-size: 0.875rem;
+		line-height: 1.2;
+		color: var(--muted);
+		background: none;
+		border: 0;
+		border-radius: 999px;
+		padding: 0.35rem 0.8rem;
+		min-height: 2rem;
+		cursor: pointer;
+	}
+	.theme-switch button:hover {
+		color: var(--ink);
+	}
+	.theme-switch button[aria-pressed="true"] {
+		background: var(--ink);
+		color: var(--on-ink);
+	}
 	.copy {
 		margin-left: auto;
+	}
+	.theme-switch:not([hidden]) + .copy {
+		margin-left: 0;
 	}
 </style>

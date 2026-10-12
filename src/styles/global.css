@@ -16,6 +16,8 @@
 	--accent-soft: #e3eaf7;
 	--plate: #d62839; /* the 24 plate; brand only, never for links */
 	--plate-text: #ffffff;
+	--on-ink: #ffffff; /* text on an ink-filled surface, e.g. the primary button */
+	color-scheme: light;
 
 	/* Type */
 	--sans: "Schibsted Grotesk Variable", system-ui, sans-serif;
@@ -33,6 +35,36 @@
 	--measure: 38rem;
 	--wide: 64rem;
 	--gutter: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* Dark palette, charcoal. Auto follows the OS unless the visitor picked Light;
+   an explicit Dark choice applies regardless. The plate red stays the same in both. */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		--bg: #16181d;
+		--surface: #1f2228;
+		--mist: #2a2e36;
+		--ink: #e8eaee;
+		--muted: #a3a9b4;
+		--rule: #2f333b;
+		--accent: #8fb3f5;
+		--accent-soft: #24324d;
+		--on-ink: #16181d;
+		color-scheme: dark;
+	}
+}
+
+:root[data-theme="dark"] {
+	--bg: #16181d;
+	--surface: #1f2228;
+	--mist: #2a2e36;
+	--ink: #e8eaee;
+	--muted: #a3a9b4;
+	--rule: #2f333b;
+	--accent: #8fb3f5;
+	--accent-soft: #24324d;
+	--on-ink: #16181d;
+	color-scheme: dark;
 }
 
 *,
