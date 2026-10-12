@@ -170,9 +170,9 @@ pre {
 	top: 0.75rem;
 }
 
-/* Long-form prose (blog posts, About) */
+/* Long-form prose (blog posts, About), in the same sans as the rest of the site */
 .prose {
-	font-family: var(--serif);
+	font-family: var(--sans);
 	font-size: var(--step-1);
 	line-height: 1.65;
 	max-width: var(--measure);
