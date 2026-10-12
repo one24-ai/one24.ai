@@ -7,13 +7,19 @@ import { SITE } from "../site";
 
 <Base>
 	<section class="wrap hero">
+		<p class="kicker">{SITE.name}</p>
 		<h1>I build tools that keep engineers in charge of their AI agents.</h1>
 		<p class="intro">
-			It’s all open source, and I help teams get past the hard part: learning to use AI agents well.
+			After 15 years in infrastructure, I build them in the open and help teams get past the hard part: learning
+			to use AI agents well.
+		</p>
+		<p class="principle">
+			Give engineers room to move fast, and put the limits where they protect everyone.
 		</p>
 		<p class="actions">
 			<a class="button" href={`mailto:${SITE.email}?subject=Consulting`}>Talk about consulting</a>
 			<a href="/work/">See the open source work</a>
+			<a href="/cv/">Read my CV</a>
 		</p>
 	</section>
 
@@ -36,6 +42,12 @@ import { SITE } from "../site";
 	.hero {
 		padding-block: clamp(3rem, 10vw, 7rem) clamp(2rem, 6vw, 4rem);
 	}
+	.kicker {
+		font-size: var(--step-1);
+		font-weight: 600;
+		color: var(--muted);
+		margin: 0 0 1rem;
+	}
 	h1 {
 		font-size: var(--step-5);
 		font-weight: 700;
@@ -49,6 +61,16 @@ import { SITE } from "../site";
 		color: var(--muted);
 		max-width: 34rem;
 		margin: 2rem 0 0;
+	}
+	.principle {
+		font-family: var(--serif);
+		font-style: italic;
+		font-size: var(--step-1);
+		color: var(--ink);
+		max-width: 34rem;
+		margin: 1.25rem 0 0;
+		padding-left: 1rem;
+		border-left: 3px solid var(--rule);
 	}
 	.actions {
 		display: flex;
