@@ -22,7 +22,7 @@ import { SITE } from "../site";
 
 		<section aria-labelledby="consulting" class="consulting">
 			<h2 id="consulting">Consulting</h2>
-			<div class="prose">
+			<div class="consulting-body">
 				<p>
 					I help engineering teams build a culture of efficiency with AI. It’s a smaller shift than most teams
 					expect: agents can be fitted to the tools and workflows you already have, so nobody has to change how
@@ -67,5 +67,17 @@ import { SITE } from "../site";
 	}
 	.consulting {
 		margin-top: 2rem;
+	}
+	.consulting-body {
+		max-width: var(--measure);
+	}
+	.consulting-body > * {
+		margin: 1em 0 0;
+	}
+	.consulting-body > :first-child {
+		margin-top: 0;
+	}
+	.consulting-body li + li {
+		margin-top: 0.4em;
 	}
 </style>
