@@ -1,0 +1,98 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+	title="Engineers in charge"
+	description="A manifesto for engineers working with AI agents: what changed, what doesn’t, and how to do it well."
+>
+	<article class="wrap">
+		<header>
+			<h1>Engineers in charge</h1>
+			<p class="lede">A manifesto for engineers working with AI agents.</p>
+		</header>
+		<div class="prose">
+			<p>
+				This is for engineers who want what AI makes possible without handing over the wheel. It’s what I’ve come
+				to believe after months of getting it wrong, and it’s what I’m building toward.
+			</p>
+
+			<h2>What changed</h2>
+			<p>
+				<strong>AI has caused a temporal shift.</strong> Work that used to take a day or two now takes under an
+				hour. The work didn’t get easier; the slow parts did. Reading docs for a system you’ve never touched,
+				hunting for the right setting, writing the boilerplate.
+			</p>
+			<p>
+				<strong>Context switching should be nearly free.</strong> You already know how these systems work. What
+				wears you down is relearning every detail just to finish one task. An agent can carry that detail for you.
+				You still need to understand how the system works. You don’t need to memorize every vendor’s knobs.
+			</p>
+			<p>
+				<strong>More output shouldn’t mean more burnout.</strong> The point is to spend more of your time on the
+				work that matters, not to fill every freed-up hour with more tickets.
+			</p>
+
+			<h2>What doesn’t change</h2>
+			<p>
+				<strong>Models are great at assumptions. Assumptions aren’t decisions.</strong> An agent will happily fill
+				every gap with a confident guess. Context, steering, correction and refinement are the job now, and that’s
+				why engineers aren’t being replaced.
+			</p>
+			<p>
+				<strong>You own what ships, no matter who typed it.</strong> If an agent wrote the change, it still goes out
+				under your name.
+			</p>
+			<p>
+				<strong>Every agent decision is on the record.</strong> Even the small break-fix calls an agent makes on its
+				own get logged and can be reviewed. That doesn’t mean a person approves every step. Review scales with
+				risk: small fixes are recorded, risky changes wait for a human.
+			</p>
+			<p>
+				<strong>An agent is just another user of your platform.</strong> It gets the same well-paved paths and the
+				same firm boundaries as everyone else. Give engineers room to move fast, and put the limits where they
+				protect everyone.
+			</p>
+
+			<h2>How to do it well</h2>
+			<p>
+				<strong>Fit AI to your workflow, not your workflow to AI.</strong> Same tools, same reviews, same on-call.
+				The pace of the work changes, not its shape. It’s a smaller shift than most teams expect.
+			</p>
+			<p>
+				<strong>Your tools should bend to you.</strong> The best engineers I know are all opinionated about their
+				tools, and they’re right to be. Agent tools should be customizable to how you work, stable enough to trust,
+				and never tied to a single model.
+			</p>
+			<p>
+				<strong>Doing it safely is the hard part.</strong> Speed is easy to demo. Guardrails, audit trails and
+				sensible defaults are what make it last. That’s the part I care most about, and it’s the part I’m building.
+			</p>
+
+			<p class="closing">Speed is the easy part. Staying in charge is the craft.</p>
+		</div>
+	</article>
+</Base>
+
+<style>
+	header {
+		max-width: 46rem;
+		margin: clamp(2rem, 6vw, 4rem) 0 2rem;
+	}
+	h1 {
+		font-size: var(--step-4);
+	}
+	.lede {
+		color: var(--muted);
+		font-size: var(--step-2);
+		margin: 0.75rem 0 0;
+	}
+	.closing {
+		margin-top: 2.5em;
+		padding-top: 1.5em;
+		border-top: 1px solid var(--rule);
+		font-size: var(--step-2);
+		font-weight: 650;
+		letter-spacing: -0.01em;
+	}
+</style>
