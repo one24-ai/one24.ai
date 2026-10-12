@@ -36,7 +36,15 @@ const ogImage = new URL("/og.png", Astro.site);
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content="one24: Zach Koncir, platform engineering, AWS and AI" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="theme-color" content="#ffffff" />
+		<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#16181d" media="(prefers-color-scheme: dark)" />
+		{/* Apply a saved Light/Dark choice before first paint so there is no flash. Without JS, Auto (the OS setting) applies. */}
+		<script is:inline>
+			try {
+				const theme = localStorage.getItem("theme");
+				if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+			} catch {}
+		</script>
 	</head>
 	<body>
 		<a class="skip-link" href="#main">Skip to content</a>
