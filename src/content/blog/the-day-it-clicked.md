@@ -25,7 +25,7 @@ I knew what a WAF was. I knew how anomaly scoring works and roughly where I'd lo
 
 I gave the agent the ticket, the incident write-up and the question. Then I mostly went back to what I was building that day, and checked in between other work.
 
-The first thing it needed was access. It didn't have the integrations, so we built them on the spot: a small helper for storing and loading API tokens, and a read-only connector to our CI server. When the API token could read analytics but not the firewall config, it told me exactly which permission was missing instead of guessing around it.
+The first thing it needed was access. It didn't have the integrations, so we built them on the spot: a small helper for storing and loading API tokens, and a connector to our observability platform. It could read the firewall config, but the audit trail didn't go back far enough to show who had changed what, and when. It said so plainly instead of guessing at the history.
 
 Then it got to work, and it came back with things I didn't expect.
 
