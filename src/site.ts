@@ -11,10 +11,10 @@ export const SITE = {
 };
 
 export const NAV = [
-	{ href: "/work/", label: "Work" },
-	{ href: "/manifesto/", label: "Manifesto" },
 	{ href: "/writing/", label: "Writing" },
+	{ href: "/manifesto/", label: "Manifesto" },
 	{ href: "/speaking/", label: "Speaking" },
+	{ href: "/work/", label: "Work" },
 	{ href: "/cv/", label: "CV" },
 	{ href: "/about/", label: "About" },
 ];
