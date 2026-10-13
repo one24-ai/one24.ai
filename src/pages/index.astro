@@ -1,6 +1,5 @@
 ---
 import Base from "../layouts/Base.astro";
-import ProjectList from "../components/ProjectList.astro";
 import PostList from "../components/PostList.astro";
 import { SITE } from "../site";
 ---
@@ -22,13 +21,14 @@ import { SITE } from "../site";
 		</p>
 	</section>
 
-	<section class="wrap block" aria-labelledby="oss">
-		<h2 id="oss">Open source</h2>
-		<h3>pi packages</h3>
-		<p class="lede">Extensions for <a href="https://pi.dev">pi</a>, the terminal coding agent I work in every day.</p>
-		<ProjectList kind="pi-package" />
-		<h3>Other projects</h3>
-		<ProjectList kind="project" />
+	<section class="wrap block" aria-labelledby="beliefs">
+		<h2 id="beliefs">What I believe</h2>
+		<ul class="beliefs">
+			<li>AI has caused a temporal shift.</li>
+			<li>Models are great at assumptions. Assumptions aren’t decisions.</li>
+			<li>You own what ships, no matter who typed it.</li>
+		</ul>
+		<p class="more"><a href="/manifesto/">Read the manifesto</a></p>
 	</section>
 
 	<section class="wrap block" aria-labelledby="writing">
@@ -99,15 +99,24 @@ import { SITE } from "../site";
 		font-size: var(--step-3);
 		margin-bottom: 1.25rem;
 	}
-	h3 {
-		font-size: var(--step-1);
-		margin: 2rem 0 0.75rem;
+	.beliefs {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border-top: 1px solid var(--rule);
+		max-width: 46rem;
 	}
-	h2 + h3 {
-		margin-top: 0;
+	.beliefs li {
+		font-size: var(--step-3);
+		font-weight: 400;
+		line-height: 1.25;
+		letter-spacing: -0.015em;
+		text-wrap: balance;
+		padding-block: 1.25rem;
+		border-bottom: 1px solid var(--rule);
 	}
-	.lede {
-		color: var(--muted);
-		margin: -0.25rem 0 1.25rem;
+	.more {
+		margin: 1.25rem 0 0;
+		font-weight: 600;
 	}
 </style>
