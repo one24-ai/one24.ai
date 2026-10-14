@@ -1,4 +1,4 @@
-import rss from "@astrojs/rss";
+import { getRssString } from "@astrojs/rss";
 import type { APIContext } from "astro";
 import { getPosts } from "../posts";
 import { SITE } from "../site";
@@ -6,7 +6,8 @@ import { SITE } from "../site";
 export async function GET(context: APIContext) {
 	const site = context.site ?? new URL(SITE.url);
 	const posts = await getPosts();
-	return rss({
+	const xml = await getRssString({
+		stylesheet: "/rss.xsl",
 		title: `${SITE.name}: writing`,
 		description: SITE.description,
 		site,
@@ -23,6 +24,12 @@ export async function GET(context: APIContext) {
 			// Full post body, with site-relative links made absolute so they work in feed readers.
 			content: absolutize(post.rendered?.html ?? "", site),
 		})),
+	});
+	// Browsers are dropping native XSLT, so the styled view also loads a polyfill.
+	// It must be a direct child of <rss> so feed readers can still parse the feed.
+	const polyfill = `<script src="/xslt-polyfill.min.js" xmlns="http://www.w3.org/1999/xhtml"></script>`;
+	return new Response(xml.replace(/(<rss\b[^>]*>)/, `$1${polyfill}`), {
+		headers: { "Content-Type": "application/xml; charset=utf-8" },
 	});
 }
 
