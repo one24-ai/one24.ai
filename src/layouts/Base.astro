@@ -45,6 +45,15 @@ const ogImage = new URL("/og.png", Astro.site);
 				if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
 			} catch {}
 		</script>
+		{/* Cloudflare Web Analytics (cookieless). Production only, so previews and local dev aren't counted. */}
+		{import.meta.env.PROD && import.meta.env.PUBLIC_PREVIEW !== "true" && (
+			<script
+				is:inline
+				defer
+				src="https://static.cloudflareinsights.com/beacon.min.js"
+				data-cf-beacon='{"token": "9d708043b8cd49aba51b1e1ebafce1c3"}'
+			></script>
+		)}
 	</head>
 	<body>
 		<a class="skip-link" href="#main">Skip to content</a>
