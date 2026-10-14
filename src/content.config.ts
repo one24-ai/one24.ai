@@ -19,7 +19,7 @@ const projects = defineCollection({
 	schema: z.object({
 		name: z.string(),
 		summary: z.string(),
-		// "pi-package" extends pi; "project" is standalone (Kiln is not a pi package).
+		// "pi-package" extends pi; "project" is standalone (Hitch CI is not a pi package).
 		kind: z.enum(["pi-package", "project"]),
 		status: z.enum(["released", "in design"]),
 		version: z.string().optional(),
