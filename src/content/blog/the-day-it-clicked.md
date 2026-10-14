@@ -51,4 +51,4 @@ It only worked because I was in the loop. The agent made assumptions, like every
 
 If you're still in the months where it doesn't click, I've been there. Pick one boring task you hate and make the agent carry it. Start there.
 
-*Next: why tech leads are in the best position to get their engineers here faster.*
+*Next: [why tech leads are in the best position to get their engineers here faster](/writing/pave-the-road/).*
