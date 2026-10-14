@@ -1,0 +1,53 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE } from "../site";
+---
+
+<Base title="Privacy" description="What one24.ai collects, and what it doesn't.">
+	<div class="wrap">
+		<h1>Privacy</h1>
+		<div class="prose">
+			<p>
+				one24 is run by {SITE.name} through an Ontario corporation. This page covers this website and the small
+				tools one24 uses to publish and measure its own content. Last updated October 14, 2026.
+			</p>
+
+			<h2>This website</h2>
+			<p>
+				one24.ai sets no cookies and has no ads or trackers. It uses Cloudflare Web Analytics, which counts page
+				views without cookies and without fingerprinting visitors, so I see totals like visits, pages and referring
+				sites, not individuals. The site is hosted on GitHub Pages, which may log visitor IP addresses for
+				security, as described in GitHub’s privacy statement.
+			</p>
+			<p>
+				If you pick a light or dark theme, your browser remembers that choice locally. It never leaves your device.
+			</p>
+
+			<h2>Social media tools</h2>
+			<p>
+				one24 uses its own private tool to publish posts to its LinkedIn accounts and to read how those posts
+				perform. It only accesses accounts that belong to one24, and only to publish and measure one24’s own
+				content. Post statistics are stored in aggregate on Cloudflare. Nothing is sold, shared with third parties,
+				or used for advertising.
+			</p>
+
+			<h2>Email</h2>
+			<p>
+				If you email me, I keep the message to reply and for my own records. I don’t add you to any list.
+			</p>
+
+			<h2>Your choices</h2>
+			<p>
+				To ask what one24 holds about you, or to have it deleted, email{" "}
+				<a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+			</p>
+		</div>
+	</div>
+</Base>
+
+<style>
+	h1 {
+		font-size: var(--step-4);
+		margin: clamp(2rem, 6vw, 4rem) 0 2rem;
+	}
+</style>
